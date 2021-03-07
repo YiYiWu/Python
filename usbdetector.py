@@ -1,5 +1,6 @@
 import os,string,time
 from ctypes import windll
+from datetime import datetime
 
 def get_driveStatus():
     devices = []
@@ -13,20 +14,17 @@ def get_driveStatus():
 
 def detect_device():
         original = set(get_driveStatus())
-        # print ('Detecting...')
         time.sleep(3)
         add_device =  set(get_driveStatus())- original
         subt_device = original - set(get_driveStatus())
 
         if (len(add_device)):
-            print ("There were {} devices.".format(len(add_device)))
             for drive in add_device:
-                print ("The drives added: {0}.".format(drive))
+                print ("The drives added: {0} at {1}.".format(drive, datetime.now()))
 
         elif(len(subt_device)):
-            print ("There were {} devices.".format(len(subt_device)))
             for drive in subt_device:
-                print ("The drives removed: {0}.".format(drive))
+                print ("The drives removed: {0} at {1}.".format(drive, datetime.now()))
                     
 if __name__ == '__main__':
     while True:
