@@ -1,4 +1,4 @@
-import os,string,time
+import string,time
 from ctypes import windll
 from datetime import datetime
 
