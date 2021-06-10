@@ -1,3 +1,2 @@
-# Python
+# USB Detect
 
-First code from Visual Studio Code 
